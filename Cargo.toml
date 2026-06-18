@@ -19,7 +19,7 @@ default = []
 serde = ["dep:serde", "egui/serde"]
 
 [dependencies]
-egui = { version = "0.34", default-features = false }
+egui         = { git = "https://github.com/emilk/egui", branch = "main" }
 serde = { version = "1", optional = true, features = ["derive"] }
 
 duplicate = "2.0"
@@ -27,11 +27,7 @@ paste = "1.0"
 thiserror = "2.0.18"
 
 [dev-dependencies]
-eframe = { version = "0.34", default-features = false, features = [
-    "default",
-    "default_fonts",
-    "glow",
-] }
+eframe       = { git = "https://github.com/emilk/egui", branch = "main", features = ["default", "default_fonts", "glow"] }
 serde_json = { version = "1" }
 
 [[example]]

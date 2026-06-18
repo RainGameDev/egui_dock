@@ -33,19 +33,9 @@ impl<Tab> DockArea<'_, Tab> {
     /// }
     /// ```
     #[inline]
-    #[deprecated = "Use show_inside() instead — with eframe 0.34+, implement App::ui which gives &mut Ui directly"]
+    #[deprecated = "Use show_inside() instead — with eframe 0.34+, implement App::ui which gives &mut Ui directly, THIS DOES NOTHING"]
     #[allow(deprecated)]
-    pub fn show(self, ctx: &Context, tab_viewer: &mut impl TabViewer<Tab = Tab>) {
-        CentralPanel::default()
-            .frame(
-                Frame::central_panel(&ctx.global_style())
-                    .inner_margin(0.)
-                    .fill(Color32::TRANSPARENT),
-            )
-            .show(ctx, |ui| {
-                self.show_inside(ui, tab_viewer);
-            });
-    }
+    pub fn show(self, ctx: &Context, tab_viewer: &mut impl TabViewer<Tab = Tab>) {}
 
     /// Shows the docking hierarchy inside a [`Ui`].
     ///
